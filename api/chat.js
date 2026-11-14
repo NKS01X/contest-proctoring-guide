@@ -1,5 +1,7 @@
-// Cloudflare Pages Function: POST /api/chat
-// The Groq key lives in the GROQ_API_KEY secret, never in client code.
+// Vercel Edge Function: POST /api/chat
+// The Groq key lives in the GROQ_API_KEY environment variable, never in client code.
+
+export const config = { runtime: "edge" };
 
 const MODEL = "llama-3.3-70b-versatile";
 
@@ -26,13 +28,16 @@ RULES:
 const json = (obj, status = 200) =>
   new Response(JSON.stringify(obj), { status, headers: { "content-type": "application/json" } });
 
-export async function onRequestPost({ request, env }) {
+export default async function handler(request) {
+  if (request.method !== "POST") return json({ error: "Use POST." }, 405);
+
   // Same-origin only
   const origin = request.headers.get("origin");
   if (origin && new URL(origin).host !== new URL(request.url).host) {
     return json({ error: "Not allowed." }, 403);
   }
-  if (!env.GROQ_API_KEY) return json({ error: "The assistant is not configured yet." }, 500);
+  const key = process.env.GROQ_API_KEY;
+  if (!key) return json({ error: "The assistant is not configured yet." }, 500);
 
   let body;
   try { body = await request.json(); } catch { return json({ error: "Invalid request." }, 400); }
@@ -48,7 +53,7 @@ export async function onRequestPost({ request, env }) {
 
   const upstream = await fetch("https://api.groq.com/openai/v1/chat/completions", {
     method: "POST",
-    headers: { "content-type": "application/json", authorization: `Bearer ${env.GROQ_API_KEY}` },
+    headers: { "content-type": "application/json", authorization: `Bearer ${key}` },
     body: JSON.stringify({
       model: MODEL,
       stream: true,
