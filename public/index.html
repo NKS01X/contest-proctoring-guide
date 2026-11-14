@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contest Proctoring: participant guide</title>
-<meta name="description" content="How to install, connect and run the contest proctoring app as a participant.">
+<meta name="description" content="Download the contest proctoring app, open it and connect your Codeforces handle.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -19,13 +19,15 @@
 
 <div class="hero">
   <div class="hero-text">
-    <h1>Keep the app open while you compete.</h1>
-    <p class="lede">Contest Proctoring is a desktop app that logs which windows and programs you use during a contest. Your host reviews the log in a dashboard. Setup takes about two minutes.</p>
+    <h1>Download the app. Connect your handle.</h1>
+    <p class="lede">Contest Proctoring is a desktop app that logs which windows and programs you use during a contest. Your host reviews the log in a dashboard. It runs on Windows, macOS and Linux, and there is nothing to build. Setup takes about two minutes.</p>
     <ol class="steps">
-      <li><strong>Launch the app.</strong> It starts recording straight away.</li>
-      <li><strong>Enter your Codeforces handle</strong> and click Connect. This tells the host which session is yours.</li>
-      <li><strong>Leave it open</strong> until the contest ends.</li>
+      <li><strong>Download the app</strong> from the registration website.</li>
+      <li><strong>Open the app</strong> and note the 5-character session code at the top.</li>
+      <li><strong>Connect your Codeforces handle</strong> in the app and on the website.</li>
+      <li><strong>Keep the app open</strong> until the contest ends.</li>
     </ol>
+    <p class="cta-row"><a class="cta" href="https://nks01x.github.io/contest-proctoring/">Go to the registration website</a></p>
   </div>
 
   <figure class="hostview" aria-label="Example of what a host sees">
@@ -48,36 +50,29 @@
 <div class="layout">
   <nav class="toc" aria-label="On this page">
     <p>On this page</p>
-    <a href="#get-the-app">Get the app</a>
-    <a href="#connect">Connect your handle</a>
+    <a href="#setup">Set up step by step</a>
     <a href="#recorded">What is recorded</a>
     <a href="#during">During the contest</a>
     <a href="#defender">Windows Defender warning</a>
-    <a href="#build">Build it yourself</a>
     <a href="#faq">Questions</a>
   </nav>
 
   <main>
-    <section id="get-the-app">
-      <h2>Get the app</h2>
-      <p>Your host gives you the app, or tells you where to download it. If they point you to the source code instead, jump to <a href="#build">Build it yourself</a>.</p>
-      <p>Install and launch it before the contest starts, so you have time to fix anything. The app shows a session token on its main screen. You do not need to copy it unless your host asks.</p>
-    </section>
-
-    <section id="connect">
-      <h2>Connect your handle</h2>
-      <ol class="plain">
-        <li>Open the app.</li>
-        <li>Type your Codeforces handle exactly as it appears on your profile.</li>
-        <li>Click <strong>Connect</strong>.</li>
+    <section id="setup">
+      <h2>Set up step by step</h2>
+      <ol class="plain big">
+        <li><strong>Go to the registration website.</strong> Open <a href="https://nks01x.github.io/contest-proctoring/">nks01x.github.io/contest-proctoring</a> and download the app for your computer. It works on Windows, macOS and Linux.</li>
+        <li><strong>Open the app.</strong> At the top it shows a 5-character session code. Keep the app open. The code is case-sensitive, so copy it exactly.</li>
+        <li><strong>Connect in the app.</strong> Type your Codeforces handle exactly as it appears on your profile and click Connect.</li>
+        <li><strong>Connect on the website.</strong> Back on the registration website, enter the same Codeforces handle and the session code from the app, then click Connect.</li>
+        <li><strong>Keep the app open</strong> until the contest ends.</li>
       </ol>
-      <p>Once connected, your host sees your handle next to your session. If you connect the wrong handle, connect again with the right one and tell your host.</p>
-      <p>There is also an optional web portal where you can enter your handle and session token. Use it only if your host says so.</p>
+      <p class="note">If you connect the wrong handle, connect again with the right one and tell your host.</p>
     </section>
 
     <section id="recorded">
       <h2>What is recorded</h2>
-      <p>The project README lists these events and nothing else:</p>
+      <p>These events are documented, and nothing else:</p>
       <div class="table-wrap">
       <table>
         <thead><tr><th>Event</th><th>What it means</th></tr></thead>
@@ -89,7 +84,7 @@
       </table>
       </div>
       <p>Events are saved on your computer and uploaded every 10 seconds. If your internet drops, they stay saved and upload when you are back online.</p>
-      <p class="note">This guide covers what the README documents. If you want to know about anything else, or what is on the blacklist, ask your host.</p>
+      <p class="note">If you want to know about anything else, or what is on the blacklist, ask your host.</p>
     </section>
 
     <section id="during">
@@ -98,13 +93,12 @@
         <li><strong>Keep the app open the whole time.</strong> Closing it stops recording, so your host may see a gap.</li>
         <li><strong>Close programs you do not need</strong> before the contest starts. Anything on the blacklist gets flagged when it starts or comes to the front.</li>
         <li><strong>A short internet drop is fine.</strong> Nothing is lost while you are offline.</li>
-        <li><strong>Check the app once</strong> after the contest starts to confirm your handle shows as connected.</li>
       </ul>
     </section>
 
     <section id="defender">
       <h2>Windows Defender warning</h2>
-      <p>Windows Defender may flag the app because it reads window titles and the list of running programs. This is expected. If it blocks the app, add an exclusion for the contest and remove it afterwards.</p>
+      <p>On Windows, Defender may flag the app because it reads window titles and the list of running programs. This is expected. If it blocks the app, add an exclusion for the contest and remove it afterwards.</p>
       <ol class="plain">
         <li>Open <strong>Windows Security</strong>, then <strong>Virus &amp; threat protection</strong>.</li>
         <li>Under Virus &amp; threat protection settings, choose <strong>Manage settings</strong>.</li>
@@ -113,41 +107,32 @@
       </ol>
     </section>
 
-    <section id="build">
-      <h2>Build it yourself</h2>
-      <p>Only needed if your host gave you the source code. You need Go 1.23 or newer and the <a href="https://wails.io/docs/gettingstarted/installation">Wails CLI</a>.</p>
-      <pre><code>git clone https://github.com/NKS01X/contest-proctoring
-cd contest-proctoring/daemon
-go mod tidy
-wails build</code></pre>
-      <p>The built app appears in <code>daemon/build/bin</code>. From the repo root, <code>./comp.sh</code> does the same in one step.</p>
-      <p>The app talks to a default server. If your host runs their own, they will give you a <code>BACKEND_URL</code> value to set before you launch it.</p>
-    </section>
-
     <section id="faq">
       <h2>Questions</h2>
       <details><summary>Connect does nothing or fails</summary>
-        <p>Check your internet connection and the spelling of your handle. If it still fails, ask your host whether their server is running.</p></details>
+        <p>Check that the app is open, your handle is spelled correctly, and the 5-character session code matches the app exactly, including capital letters. If it still fails, ask your host.</p></details>
+      <details><summary>Do I need to build or install anything else?</summary>
+        <p>No. Download the app from the registration website and open it.</p></details>
       <details><summary>Does it work on Mac and Linux?</summary>
-        <p>The README calls it cross-platform. The only platform note it gives is for Windows.</p></details>
-      <details><summary>Where is my session token?</summary>
-        <p>On the app's main screen.</p></details>
+        <p>Yes. It runs on Windows, macOS and Linux.</p></details>
+      <details><summary>Where is my session code?</summary>
+        <p>At the top of the app.</p></details>
       <details><summary>I closed the app by accident</summary>
-        <p>Open it again and check that your handle still shows as connected. Tell your host about the gap.</p></details>
+        <p>Open it again right away and check that your handle still shows as connected. Tell your host about the gap.</p></details>
       <details><summary>Who can see my data?</summary>
-        <p>The host sees it in their dashboard, protected by a host key. Ask your host how long they keep it. The backend can delete old events automatically.</p></details>
+        <p>The host sees it in their dashboard, protected by a host key. Ask your host how long they keep it.</p></details>
       <p>Anything else? <button class="link-btn" id="open-chat-2" type="button">Ask the assistant</button></p>
     </section>
 
     <footer>
-      <a href="https://github.com/NKS01X/contest-proctoring">Source code on GitHub</a>
+      <a href="https://nks01x.github.io/contest-proctoring/">Registration website</a>
     </footer>
   </main>
 </div>
 
 <aside class="chat" id="chat" aria-label="Assistant" hidden>
   <div class="chat-head">
-    <div><strong>Setup assistant</strong><small>Answers come from the project README.</small></div>
+    <div><strong>Setup assistant</strong><small>Ask about setup or fixing a problem.</small></div>
     <button type="button" id="close-chat" aria-label="Close assistant">Close</button>
   </div>
   <div class="chat-body" id="messages" aria-live="polite">
