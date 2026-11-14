@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/bot.css">
 </head>
 <body>
 
@@ -130,6 +131,32 @@
   </main>
 </div>
 
+<div class="launcher" id="launcher">
+  <div class="bubble" id="bubble">
+    <button class="bubble-text" id="bubble-open" type="button">Have any questions?</button>
+    <button class="bubble-x" id="bubble-close" type="button" aria-label="Dismiss">&times;</button>
+  </div>
+  <button class="bot" id="bot-btn" type="button" aria-label="Ask the assistant">
+    <svg viewBox="0 0 100 110" aria-hidden="true">
+      <ellipse cx="50" cy="102" rx="30" ry="5" fill="#0B6E78" opacity=".22"/>
+      <rect x="34" y="60" width="32" height="32" rx="15" fill="#F6F9F8" stroke="#B9C4C0" stroke-width="1.5"/>
+      <rect x="42" y="72" width="16" height="9" rx="4.5" fill="#0B6E78"/>
+      <ellipse cx="29" cy="76" rx="5" ry="9" fill="#F6F9F8" stroke="#B9C4C0" stroke-width="1.5"/>
+      <rect class="bot-arm" x="66" y="46" width="10" height="28" rx="5" fill="#F6F9F8" stroke="#B9C4C0" stroke-width="1.5"/>
+      <line x1="50" y1="15" x2="50" y2="7" stroke="#17202A" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="50" cy="6" r="3.5" fill="#0B6E78"/>
+      <rect x="13" y="30" width="9" height="18" rx="4.5" fill="#0B6E78"/>
+      <rect x="78" y="30" width="9" height="18" rx="4.5" fill="#0B6E78"/>
+      <rect x="19" y="15" width="62" height="48" rx="22" fill="#FFFFFF" stroke="#B9C4C0" stroke-width="1.5"/>
+      <rect x="27" y="25" width="46" height="28" rx="14" fill="#17202A"/>
+      <ellipse cx="40" cy="39" rx="5" ry="6" fill="#5CE7E0"/>
+      <ellipse cx="60" cy="39" rx="5" ry="6" fill="#5CE7E0"/>
+      <circle cx="41.5" cy="37" r="1.6" fill="#FFFFFF"/>
+      <circle cx="61.5" cy="37" r="1.6" fill="#FFFFFF"/>
+    </svg>
+  </button>
+</div>
+
 <aside class="chat" id="chat" aria-label="Assistant" hidden>
   <div class="chat-head">
     <div><strong>Setup assistant</strong><small>Ask about setup or fixing a problem.</small></div>
@@ -147,11 +174,12 @@
   </div>
   <form class="chat-form" id="form">
     <label class="sr" for="input">Your question</label>
-    <textarea id="input" rows="1" maxlength="1000" placeholder="Type your question"></textarea>
+    <textarea id="input" rows="1" maxlength="500" placeholder="Type your question"></textarea>
     <button type="submit" id="send">Send</button>
   </form>
 </aside>
 
 <script src="/app.js"></script>
+<script src="/bot.js"></script>
 </body>
 </html>

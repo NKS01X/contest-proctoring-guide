@@ -1,0 +1,31 @@
+.launcher{position:fixed;z-index:9;right:1.25rem;bottom:1.25rem;display:flex;align-items:flex-end;gap:.6rem}
+.launcher[hidden]{display:none}
+
+.bot{background:none;border:0;padding:0;cursor:pointer;width:5.25rem;height:5.75rem;border-radius:50%;animation:bob 3.4s ease-in-out infinite}
+.bot svg{width:100%;height:100%;display:block;overflow:visible}
+.bot:hover .bot-arm{animation-duration:.7s}
+.bot-arm{transform-box:fill-box;transform-origin:50% 100%;animation:wave 1.8s ease-in-out infinite}
+
+.bubble{position:relative;display:flex;align-items:center;margin-bottom:2.1rem;background:var(--surface);color:var(--ink);
+  border:1px solid var(--ink);border-radius:12px;box-shadow:0 6px 18px rgba(23,32,42,.14);
+  opacity:0;transform:scale(.85);transform-origin:100% 100%;animation:pop .35s ease-out 1.2s forwards}
+.bubble[hidden]{display:none}
+.bubble::after{content:"";position:absolute;right:-7px;bottom:12px;width:12px;height:12px;background:var(--surface);
+  border-right:1px solid var(--ink);border-top:1px solid var(--ink);transform:rotate(45deg)}
+.bubble-text{font:500 .95rem var(--font);background:none;border:0;color:inherit;cursor:pointer;padding:.55rem .35rem .55rem .85rem}
+.bubble-x{font:500 1.1rem/1 var(--font);background:none;border:0;color:var(--muted);cursor:pointer;padding:.4rem .6rem .4rem .2rem}
+.bubble-x:hover{color:var(--ink)}
+
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes wave{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(22deg)}}
+@keyframes pop{to{opacity:1;transform:scale(1)}}
+
+@media (max-width:520px){
+  .launcher{right:.75rem;bottom:.75rem}
+  .bot{width:4.25rem;height:4.7rem}
+  .bubble{margin-bottom:1.6rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .bot,.bot-arm{animation:none}
+  .bubble{animation:none;opacity:1;transform:none}
+}
