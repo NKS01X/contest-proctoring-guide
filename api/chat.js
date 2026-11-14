@@ -187,7 +187,7 @@ export default {
     }
 
     return new Response(res.body, {
-      headers: { "content-type": "application/json".replace("application/json", "text/event-stream"), "cache-control": "no-store" },
+      headers: { "content-type": "text/event-stream", "cache-control": "no-store" },
     });
   },
 };
